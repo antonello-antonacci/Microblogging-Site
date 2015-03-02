@@ -1,0 +1,86 @@
+<html>
+    <head>
+        <script type="text/javascript" src="scripts/jquery.js"></script>
+        <script type="text/javascript" src="scripts/jquery.form.js"></script> 
+        
+        <script type="text/javascript" src="scripts/login.js"></script> 
+        <script type="text/javascript" src="scripts/logout.js"></script> 
+        <script type="text/javascript" src="scripts/post.js"></script> 
+        <script type="text/javascript" src="scripts/postrequest.js"></script> 
+        <script type="text/javascript" src="scripts/respam.js"></script> 
+        <script type="text/javascript" src="scripts/replyto.js"></script> 
+        <script type="text/javascript" src="scripts/setlike.js"></script> 
+        <script type="text/javascript" src="scripts/setfollow.js"></script> 
+        <script type="text/javascript" src="scripts/servers.js"></script> 
+        <script type="text/javascript" src="scripts/thesaurus.js"></script> 
+        <script type="text/javascript" src="scripts/search.js"></script> 
+        
+        <script type="text/javascript" src="scripts/rdf/jquery.rdfquery.core-1.0.js"></script> 
+        <script type="text/javascript" src="scripts/rdf/jquery.rdfquery.rdfa-1.0.js"></script> 
+        <script type="text/javascript" src="scripts/rdf/jquery.rdfquery.rules-1.0.js"></script> 
+
+    </head>
+    <body>
+        <form id="login">
+            <input type="text" name="username">
+            <input type="submit" value="login">
+        </form>
+        <div id="username"></div>
+        <button id="logout">logout</button>
+        </br>
+        <form id="inviopost">
+            <input type="text" id="article">
+            <input type="submit" value="send post">
+        </form>
+        <button id="respam">respam</button>
+        </br>
+        <form id="replyto">
+            <input type="text" id="article">
+            <input type="submit" value="reply post">
+        </form>      
+        </br>
+        <button id="like">set like</button>
+        </br>
+        <button id="dislike">set dislike</button>
+        </br>
+        <button id="getservers">get servers</button>
+        </br>
+        <form id="setservers">
+            <input type="text" id="article">
+            <input type="submit" value="add server">
+        </form> 
+        </br>
+        <form id="setfollow">
+            <input type="text" id="user">
+            <input type="text" id="server">
+            <input type="submit" value="set follow">
+        </form>       
+        </br>
+        <form id="setunfollow">
+            <input type="text" id="user">
+            <input type="text" id="server">
+            <input type="submit" value="set unfollow">
+        </form>       
+        </br>
+        <form id="search">
+            <input type="text" id="limit">
+            <input type="text" id="type">
+            <input type="text" id="param">
+            <input type="submit" value="search">
+        </form> 
+        <button id="postrequest">post request</button>
+        </br>
+        <button id="addterm">add term</button>
+        </br>
+        <button id="remterm">rem term</button>
+        </br>
+        <button id="thesaurus">thesaurus</button>
+        
+        </br>
+        </br>
+        
+        <div></div>
+        
+        
+    </body>
+</html>

@@ -1,0 +1,137 @@
+			
+ 					
+div#tab-get {
+					width: 100px;
+					height: 0px;
+  			  		position: relative;
+			  		top: 25%;
+			  		left: 83%;
+		}
+		
+ 				
+div#tab-dialog {
+						width: 30px;
+						height: 0px;
+			  			position: relative;
+			  			top: 25%;
+			  			left: 92%;
+		}
+		
+div#tdx {
+				width: 250px;
+				height: 0px;
+				position: relative;
+				top: 20%;
+				left: 42%;
+				
+			}
+
+
+div#timeline-separator{
+    width: auto;
+    height:3px;
+    background-color:#000066;
+	
+}
+
+a#thes-word{
+    color:blue;
+}
+
+div#scroll {
+	width: auto;
+	height: 100%;
+	
+
+}
+
+div#scrollLogin {
+	width: auto;
+	height: 400px;
+	overflow: hidden;
+
+}
+
+div#scrollcreaP {
+	width: auto;
+	height: 400px;
+	overflow: hidden;
+
+}
+
+div#scrollricerca {
+	width: auto;
+	height: 500px;
+	overflow: hidden;
+
+}
+
+
+	div#lsu,div#l,div#lt, div#lsup {
+    background-color:#e8e8e8;
+    position: absolute;
+    top:auto;
+    width:90%;
+    height:50%;
+    
+}
+
+
+
+a#replyTo{
+    color:blue;
+}
+
+
+.main_container {
+	width: 800px;
+	margin: 0 auto;
+}
+.notification {
+	line-height: 30px;
+	cursor: pointer;
+	clear: both;
+	height: 30px;
+	margin: 8px 0px 8px 0px;
+	padding: 20px 25px 10px 60px;
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+}
+.notification strong {
+	margin-right: 5px;
+}
+.notification p {
+	font-size: 11px;
+	padding: 0px;
+	margin: 0px;
+	color: #333333;
+}
+
+.information {
+	background-image: url(images/information.png);
+	background-position: 15px center;
+	background-repeat: no-repeat;
+	border: 2px solid #418ACC;
+	background-color: #D0E4F4;
+	color: #235685;
+}
+
+p#post{
+    overflow:scroll;
+    margin-left:3%;
+    margin-right:3%;
+}
+
+article{
+    overflow:scroll;
+}
+
+
+
+
+
+
+
+
+ 
+ 

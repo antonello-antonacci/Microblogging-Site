@@ -1,0 +1,454 @@
+<!DOCTYPE html> 
+<html> 
+	<head> 
+	
+	
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1"> 
+	<title> SPAM MOBILE</title> 
+		
+	
+	<link href="http://code.jquery.com/mobile/latest/jquery.mobile.min.css" rel="stylesheet" type="text/css" />
+	<script src="http://code.jquery.com/jquery-1.6.4.min.js"></script>
+
+
+	<script type="text/javascript" src="scripts/jquery/jquery.form.js"></script> 
+	<script type="text/javascript" src="scripts/jquery/jquery.charcounter.js"></script>
+	<script type="text/javascript" src="scripts/jquery/jquery.cookie.js"></script>
+	<script type="text/javascript" src="scripts/jquery/jquery.mobile-1.0b3.js"></script>
+	<script type="text/javascript" src="scripts/Mobile/pam/login.js"></script>
+ 	<script type="text/javascript" src="scripts/Mobile/timer.js"></script>
+	<script type="text/javascript" src="scripts/Mobile/pam/servers.js"></script>	
+	<script type="text/javascript" src="scripts/Mobile/pam/search.js"></script>
+	<script type="text/javascript" src="scripts/Mobile/timeline.js"></script>
+	<script type="text/javascript" src="scripts/Mobile/function.js"></script>
+	<script type="text/javascript" src="scripts/Mobile/pam/post.js"></script>
+	<script type="text/javascript" src="scripts/Mobile/pam/setlike.js"></script>
+	<script type="text/javascript" src="scripts/Mobile/pam/replyto.js"></script>
+
+
+	
+ 	<style type="text/css">
+        @import url("css/stileMobile.css");
+   	 </style>
+
+ 	<style>	
+		.nav-glyphish-example .ui-btn .ui-btn-inner { padding-top: 30px !important; }
+		.nav-glyphish-example .ui-btn .ui-icon { width: 20px!important; height: 25px!important; margin-left: -15px !important; box-shadow: none!important; -moz-box-shadow: none!important; -webkit-box-shadow: none!important; -webkit-border-radius: 0 !important; border-radius: 0 !important; }
+		#loginlogout .ui-icon { background:  url(css/glyphish-icons/icons/54-lock.png) 50% 50% no-repeat; background-size: 15px 18px; }
+		#follow .ui-icon { background:  url(css/glyphish-icons/icons/112-group.png) 50% 50% no-repeat; background-size: 30px 18px;  }
+		#postc .ui-icon { background:  url(css/glyphish-icons/icons/187-pencil.png) 50% 50% no-repeat;  background-size: 12px 18px; }
+		#timel .ui-icon { background:  url(css/glyphish-icons/icons/111-user.png) 50% 50% no-repeat;  background-size: 22px 18px; }
+		#ricercaicon .ui-icon { background:  url(css/glyphish-icons/icons/06-magnify.png) 50% 50% no-repeat;  background-size: 20px 18px; }
+		
+	</style>
+
+
+
+
+
+</head>	
+	
+<body> 
+
+
+
+
+
+
+<!-- Start of second page -->
+<div data-role="page" id="following">
+
+	<div data-role="header" data-theme="b">
+		<h1>SPAM</h1>
+<a href="#info" data-rel="dialog" data-icon="info" data-transition="pop"  class="ui-btn-right">Info</a>
+<a id="home-button" onclick="startTimer()" data-icon="refresh" data-transition="pop"  class="ui-btn-left">Refresh</a>
+		
+<div data-role="navbar" class="nav-glyphish-example">
+		<ul>
+			<li><a href="#accesso" data-theme="c"  id="loginlogout" data-icon="custom"></a></li>
+			<li><a href="#following" data-theme="c" class="ui-btn-active" id="follow" data-icon="custom"></a></li>
+			<li><a href="#creapost" data-theme="c" id="postc" data-icon="custom"></a></li>
+			<li><a href="#timeline" data-theme="c" id="timel" data-icon="custom"></a></li>
+			<li><a href="#ricerca" data-theme="c" id="ricercaicon" data-icon="custom"></a></li>
+		</ul>
+	</div><!-- /navbar -->		
+		
+	</div><!-- /header -->
+
+	<div data-role="content">
+
+<div id="loginNotification" class="notification information hideit ">
+            
+                <p><strong>INFORMATION: </strong>
+                Effettua il Login</p>
+            </div> 
+            
+        </div>
+
+<ul data-role="listview" data-inset="true"  >
+				<li data-role="list-divider" id="Finestra0t"></li>
+				<li id="li0"><div id="Finestra0"></div>
+							
+			<button id="Like0" data-role="button" data-inline="true" data-theme="b" data-icon="plus" data-iconpos="notext"  >Like</button>
+			<button id="Dislike0" data-role="button" data-inline="true" data-theme="b" data-icon="minus" data-iconpos="notext" >Dislike</button>
+         <button id="Reply0" data-role="button" data-inline="true" data-theme="b" data-icon="back"  data-iconpos="notext">Reply</button>			
+			<button id="Respam0" data-role="button" data-inline="true" data-theme="b" data-icon="refresh" data-iconpos="notext"  >Respam</button>
+				</li>
+				
+				<li data-role="list-divider" id="Finestra1t"></li>
+				<li id="li1"><div id="Finestra1"></div>
+							
+
+                	<button id="Like1" data-role="button" data-inline="true" data-theme="b" data-icon="plus"  data-iconpos="notext">Like</button>
+			<button id="Dislike1" data-role="button" data-inline="true" data-theme="b" data-icon="minus" data-iconpos="notext">Dislike</button>
+			<button id="Reply1" data-role="button" data-inline="true" data-theme="b" data-icon="back"  data-iconpos="notext">Reply</button>
+			<button id="Respam1" data-role="button" data-inline="true" data-theme="b" data-icon="refresh" data-iconpos="notext">Respam</button>
+
+				</li>
+				<li data-role="list-divider" id="Finestra2t"></li>
+				<li id="li2"><div id="Finestra2"></div>
+							
+
+			<button id="Like2" data-role="button" data-inline="true" data-theme="b" data-icon="plus" data-iconpos="notext" >Like</button>
+			<button id="Dislike2" data-role="button" data-inline="true" data-theme="b" data-icon="minus" data-iconpos="notext" >Dislike</button>
+			<button id="Reply2" data-role="button" data-inline="true" data-theme="b" data-icon="back" data-iconpos="notext">Reply</button>
+			<button id="Respam2" data-role="button" data-inline="true" data-theme="b" data-icon="refresh" data-iconpos="notext" >Respam</button>
+
+				</li>
+				<li data-role="list-divider" id="Finestra3t"></li>
+				<li id="li3"><div id="Finestra3"></div>
+							
+
+			<button id="Like3" data-role="button" data-inline="true" data-theme="b" data-icon="plus" data-iconpos="notext" >Like</button>
+			<button id="Dislike3" data-role="button" data-inline="true" data-theme="b" data-icon="minus" data-iconpos="notext" >Dislike</button>
+			<button id="Reply3" data-role="button" data-inline="true" data-theme="b" data-icon="back" data-iconpos="notext" >Reply</button>
+			<button id="Respam3" data-role="button" data-inline="true" data-theme="b" data-icon="refresh" data-iconpos="notext">Respam</button>
+
+				</li>
+				<li data-role="list-divider" id="Finestra4t"></li>
+				<li id="li4"><div id="Finestra4"></div>
+							
+
+			<button id="Like4" data-role="button" data-inline="true" data-theme="b" data-icon="plus" data-iconpos="notext" >Like</button>
+			<button id="Dislike4" data-role="button" data-inline="true" data-theme="b" data-icon="minus" data-iconpos="notext" >Dislike</button>
+			<button id="Reply4" data-role="button" data-inline="true" data-theme="b" data-icon="back" data-iconpos="notext">Reply</button>
+			<button id="Respam4" data-role="button" data-inline="true" data-theme="b" data-icon="refresh" data-iconpos="notext">Respam</button>
+
+				</li>
+				<li data-role="list-divider" id="Finestra5t"></li>
+				<li id="li5"><div id="Finestra5"></div>
+							
+
+			<button id="Like5" data-role="button" data-inline="true" data-theme="b" data-icon="plus" data-iconpos="notext" >Like</button>
+			<button id="Dislike5" data-role="button" data-inline="true" data-theme="b" data-icon="minus" data-iconpos="notext" >Dislike</button>
+			<button id="Reply5" data-role="button" data-inline="true" data-theme="b" data-icon="back" data-iconpos="notext">Reply</button>
+			<button id="Respam5" data-role="button" data-inline="true" data-theme="b" data-icon="refresh" data-iconpos="notext" >Respam</button>
+				</li>
+				<li data-role="list-divider" id="Finestra6t"></li>
+				<li id="li6"><div id="Finestra6"></div>
+							
+
+			<button id="Like6" data-role="button" data-inline="true" data-theme="b" data-icon="plus" data-iconpos="notext">Like</button>
+			<button id="Dislike6" data-role="button" data-inline="true" data-theme="b" data-icon="minus" data-iconpos="notext">Dislike</button>
+			<button id="Reply6" data-role="button" data-inline="true" data-theme="b" data-icon="back" data-iconpos="notext" >Reply</button>
+			<button id="Respam6" data-role="button" data-inline="true" data-theme="b" data-icon="refresh" data-iconpos="notext">Respam</button>
+
+				</li>
+				<li data-role="list-divider" id="Finestra7t"></li>
+				<li id="li7"><div id="Finestra7"></div>
+
+			<button id="Like7" data-role="button" data-inline="true" data-theme="b" data-icon="plus" data-iconpos="notext">Like</button>
+			<button id="Dislike7" data-role="button" data-inline="true" data-theme="b" data-icon="minus" data-iconpos="notext">Dislike</button>
+			<button id="Reply7" data-role="button" data-inline="true" data-theme="b" data-icon="back" data-iconpos="notext">Reply</button>
+			<button id="Respam7" data-role="button" data-inline="true" data-theme="b" data-icon="refresh" data-iconpos="notext" >Respam</button>
+
+				</li>
+								
+			</ul>
+
+
+
+	</div><!-- /content -->
+
+	
+</div><!-- /page -->
+
+<!-- Start of first page -->
+<div data-role="page" id="accesso">
+
+	<div data-role="header" data-theme="b" data-position="inline">
+			
+			<h1>SPAM</h1>
+
+		<a href="#info" data-rel="dialog" data-icon="info" data-transition="pop"  class="ui-btn-right">Info</a>
+
+		<div data-role="navbar" class="nav-glyphish-example">
+		<ul>
+			<li><a href="#accesso" id="loginlogout" data-icon="custom"  class="ui-btn-active"  ></a></li>
+			<li><a href="#following" id="follow" data-icon="custom" data-theme="c"></a></li>
+			<li><a href="#creapost" id="postc" data-icon="custom" data-theme="c"></a></li>
+			<li><a href="#timeline" id="timel" data-icon="custom" data-theme="c"></a></li>
+			<li><a href="#ricerca" id="ricercaicon" data-icon="custom" data-theme="c"></a></li>
+		</ul>
+	</div><!-- /navbar -->
+		
+	</div><!-- /header -->
+
+	<div data-role="content" align="center" >	
+	<div id="scrollLogin">
+		<h2 align="center" >Benvenuti in SPAM!</h2>
+
+ <div id="username"></div>
+	
+        
+            <input id="loginText" type="text" name="username" style="width: 135px;"
+            		onclick="if (this.value=='Username') this.value=''; "
+            		onblur=" if(this.value=='') ;">
+           <input id="login"  type="submit" value="login"  data-inline="true" data-theme="b">
+    <button id="logout"  data-inline="true" data-theme="b">logout</button>
+
+ </div>
+			
+			
+	</div><!-- /content -->
+
+	
+</div><!-- /page -->
+
+
+<!-- Start of 3 page -->
+<div data-role="page" id="timeline">
+
+	<div data-role="header" data-theme="b">
+		<h1>SPAM</h1>
+<a href="#info" data-rel="dialog" data-icon="info" data-transition="pop"  class="ui-btn-right">Info</a>
+<a id="home-button" onclick="startTimer()" data-icon="refresh" data-transition="pop"  class="ui-btn-left">Refresh</a>
+
+<div data-role="navbar" class="nav-glyphish-example">
+		<ul>
+			<li><a href="#accesso" data-theme="c" id="loginlogout" data-icon="custom"></a></li>
+			<li><a href="#following" data-theme="c" id="follow" data-icon="custom"></a></li>
+			<li><a href="#creapost" data-theme="c" id="postc" data-icon="custom"></a></li>
+			<li><a href="#timeline" data-theme="c" id="timel" data-icon="custom" class="ui-btn-active"></a></li>
+			<li><a href="#ricerca" data-theme="c" id="ricercaicon" data-icon="custom"></a></li>
+		</ul>
+	</div><!-- /navbar -->		
+		
+	</div><!-- /header -->
+
+	<div data-role="content">	
+			
+		<div id="loginNotification1" class="notification information hideit ">
+            
+            <p><strong>INFORMATION: </strong>
+            Effettua il Login</p>
+        </div> 
+    </div>
+
+			<div id="scroll">	
+				 <div id="lastPost" ></div>
+			</div>
+
+	
+
+	</div><!-- /content -->
+
+	
+</div><!-- /page -->
+
+<!-- Start of 4 page -->
+<div data-role="page" id="creapost">
+
+	<div data-role="header" data-theme="b">
+	<h1>SPAM</h1>
+<a href="#info" data-rel="dialog" data-icon="info" data-transition="pop"  class="ui-btn-right">Info</a>
+
+<div data-role="navbar" class="nav-glyphish-example">
+		<ul>
+			<li><a href="#accesso" data-theme="c" id="loginlogout" data-icon="custom" ></a></li>
+			<li><a href="#following" data-theme="c" id="follow" data-icon="custom"></a></li>
+			<li><a href="#creapost" data-theme="c" class="ui-btn-active" id="postc" data-icon="custom" ></a></li>
+			<li><a href="#timeline" data-theme="c" id="timel" data-icon="custom"></a></li>
+			<li><a href="#ricerca" data-theme="c" id="ricercaicon" data-icon="custom"></a></li>
+		</ul>
+	</div><!-- /navbar -->	
+	
+	</div><!-- /header -->
+
+	<div data-role="content" align="center">	
+			<div id="scrollcreaP">
+			<h2 align="center" >Cosa c'&egrave; di nuovo?</h2>
+			
+
+			<textarea id="articolo" class="myTextAreainvio" cols=42 rows=3 ></textarea> <br>
+				<button id="finestrainvio" data-role="button" data-inline="true" data-theme="b" >Invio</button>
+			
+				
+	</div>
+			
+	</div><!-- /content -->
+
+	
+</div><!-- /page -->
+
+<!-- Start of 5 page -->
+<div data-role="page" id="ricerca">
+
+	<div data-role="header" data-theme="b">
+		<h1>SPAM</h1>
+<a href="#info" data-rel="dialog" data-icon="info" data-transition="pop"  class="ui-btn-right">Info</a>
+
+<div data-role="navbar" class="nav-glyphish-example">
+		<ul>
+			<li><a href="#accesso" data-theme="c" id="loginlogout" data-icon="custom" ></a></li>
+			<li><a href="#following" data-theme="c" id="follow" data-icon="custom"></a></li>
+			<li><a href="#creapost" data-theme="c"  id="postc" data-icon="custom" ></a></li>
+			<li><a href="#timeline" data-theme="c" id="timel" data-icon="custom"></a></li>
+			<li><a href="#ricerca" data-theme="c" class="ui-btn-active" id="ricercaicon" data-icon="custom"></a></li>
+		</ul>
+	</div><!-- /navbar -->		
+		
+	</div><!-- /header -->
+
+<div data-role="content" align="center">	
+				
+				
+				<h2 align="center">Ricerca</h2>
+				
+	
+	<div id="scrollricerca"
+	
+	
+                
+                    <p>
+                        <select id="searchType" name="type"  data-theme="b">
+                            <option value="author">author</option>
+                            <option value="following">following</option>
+                            <option value="recent">recent</option>
+                            <option value="related">related</option>
+                            <option value="fulltext">fulltext</option>
+                            <option value="affinity">affinity</option>
+                        </select>
+                    </p>
+
+                    <p>
+                        <select id="selectLimit" name="limit" data-theme="b">
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                        </select>
+                    </p>
+                    <div id="lsu">
+                        <p><select id="searchserverlistLsu" data-theme="b"></select></p>
+                        
+                        <input type="text" id="paramUserIdLsu" style="width: 110px;" name="param" placeholder="UserID"  onclick="if (this.value=='UserID') this.value=''; "
+                            onblur=" if(this.value=='') this.value='UserID';">
+                            <p>
+                            <input type="submit" value="search" onclick="search()" data-role="button" data-inline="true" data-theme="b"/>
+                            </p>
+                    </div>
+                    <div id="l">
+                        <p>
+                        <input type="submit" value="search" onclick="search()" data-role="button" data-inline="true" data-theme="b"/>
+                        </p>
+                    </div>
+                    <div id="lt">
+                        <input type="text" id="paramTermLt" style="width: 110px;" name="param" placeholder="Termine"  onclick="if (this.value=='Termine') this.value=''; "
+                            onblur=" if(this.value=='') this.value='Termine';">
+                            <p>
+                            <input type="submit" value="search" onclick="search()"data-role="button" data-inline="true" data-theme="b"/>
+                            </p>
+                    </div>
+                    <div id="lsup">
+                        <p><select id="searchserverlistLsup" data-theme="b"></select></p>
+                        
+                        <input type="text" id="paramUserLsup" style="width: 110px;" name="param" placeholder="UserID"  onclick="if (this.value=='UserID') this.value=''; "
+                            onblur=" if(this.value=='') this.value='UserID';">
+
+                        <input type="text" id="paramPostLsup" style="width: 110px;" name="param" placeholder="PostID"  onclick="if (this.value=='PostID') this.value=''; "
+                            onblur=" if(this.value=='') this.value='PostID';">
+                            <p>
+                            <input type="submit" value="search" onclick="search()" data-role="button" data-inline="true" data-theme="b"/>
+                            </p>
+                    </div>
+                
+			
+	</div>
+	</div><!-- /content -->
+
+	
+</div><!-- /page -->
+
+<div data-role="page" id="info"><!-- page dialog info -->
+	
+		<div data-role="header" data-theme="d">
+			<h2>Utilizzo SPAM</h2>
+
+		</div>
+
+		<div data-role="content" data-theme="c">
+			
+			<p>Benvenuto in Twenty! <br> 
+
+Per iniziare ad utilizzare tutti i nostri servizi effettua il login con il tuo nome utente. Non &egrave; richiesta alcuna password.
+
+Una volta effettuato il login, inizia ad esplorare il nostro microblog versione mobile tramite la navbar. <br>
+
+<img src="css/glyphish-icons/icons/54-lock.png" alt=""> serve per il login/logout;<br>
+
+<img src="css/glyphish-icons/icons/112-group.png" alt=""  > serve per tenerti sempre aggiornato sugli ultimi post dei tuoi amici, aggiornandolo anche tramite il pulsante refresh; <br>
+
+<img src="css/glyphish-icons/icons/187-pencil.png" alt="" > serve per pubblicare un nuovo post; <br>
+
+<img src="css/glyphish-icons/icons/111-user.png" alt=""  >raccoglie gli ultimi 10 post da te pubblicati;<br>
+
+<img src="css/glyphish-icons/icons/06-magnify.png" alt=""  > &egrave; possibile effettuare una ricerca (author, following, recent,related, fulltext e affinity), impostando il limite dei post da trovare e quando &egrave; richiesto impostare anche il server. <br>
+
+I risultati di qualsiasi ricerca effettuata apparir&agrave; in follow. in ogni finestra troverai il post e il suo autore. </br>
+Tramite le options puoi inoltre: <br>
+
+	<img src="css/glyphish-icons/icons/like.png"> mi piace;<br>
+	<img src="css/glyphish-icons/icons/dislike.png"  > non mi piace;<br>
+	<img src="css/glyphish-icons/icons/reply.png"  > rispondere al post;<br>
+	<img src="css/glyphish-icons/icons/respam.png"  > respammare il post.<br>
+   
+
+Per informazini contattare i seguenti esperti:
+
+	scarlino@cs.unibo.it 
+	ladisa@cs.unibo.it 
+	antonacc@cs.unibo.it
+
+Per donazioni di qualsiasi somma (basta il pensiero) per il mantenimento del progetto ( noi rifiutiamo le pubblicit&agrave;) versare sul seguete conto <br>
+
+C/C 1234567893245761289ah <br>
+intestato a: Twenty spa association</p>
+			 
+		</div>
+
+	</div>
+
+<div data-role="page" id="risp"><!-- page reply -->
+	
+		<div data-role="header" data-theme="d">
+			<h2>Rispondi al Post</h2>
+
+		</div>
+
+		<div data-role="content" data-theme="c">
+			
+			<textarea id="articolo" class="myTextArea" cols=42 rows=3 ></textarea> <br>
+				<button id="rispondipost"  data-role="button" data-inline="true" data-theme="b" >Invio</button>
+				<button onclick="location.href='mobile.html#following';" data-role="button" data-inline="true" data-theme="b" >Annulla</button>
+			 
+		</div>
+
+	</div>
+
+</body>
+
+</html>

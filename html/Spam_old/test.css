@@ -1,0 +1,21 @@
+body {
+
+	background: #4c6a84; /* for non-css3 browsers */
+
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#4c6a84', endColorstr='#7c93a7'); /* for IE */
+	background: -webkit-gradient(linear, left top, left bottom, from(#4c6a84), to(#7c93a7)); /* for webkit browsers */
+	background: -moz-linear-gradient(top,  #4c6a84,  #7c93a7); /* for firefox 3.6+ */ 
+	background-repeat:no-repeat;
+	background-attachment: fixed;	
+
+
+}
+
+div#navbar {
+	margin-top:-8px;
+	margin-left:-8px;
+
+	height: 35px;
+	width: 102%;
+
+}

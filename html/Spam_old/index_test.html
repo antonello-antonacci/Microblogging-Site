@@ -1,0 +1,63 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        
+        <script type="text/javascript" src="scripts/jquery.js"></script>
+        <script type="text/javascript" src="scripts/jquery.form.js"></script> 
+        
+        <script type="text/javascript" src="scripts/login.js"></script> 
+        <script type="text/javascript" src="scripts/logout.js"></script> 
+        <script type="text/javascript" src="scripts/post.js"></script> 
+        <script type="text/javascript" src="scripts/postrequest.js"></script> 
+        <script type="text/javascript" src="scripts/respam.js"></script> 
+        <script type="text/javascript" src="scripts/replyto.js"></script> 
+        <script type="text/javascript" src="scripts/setlike.js"></script> 
+        <script type="text/javascript" src="scripts/setfollow.js"></script> 
+        <script type="text/javascript" src="scripts/servers.js"></script> 
+        <script type="text/javascript" src="scripts/thesaurus.js"></script> 
+        <script type="text/javascript" src="scripts/search.js"></script> 
+        
+        <script type="text/javascript" src="scripts/rdf/jquery.rdfquery.core-1.0.js"></script> 
+        <script type="text/javascript" src="scripts/rdf/jquery.rdfquery.rdfa-1.0.js"></script> 
+        <script type="text/javascript" src="scripts/rdf/jquery.rdfquery.rules-1.0.js"></script> 
+        
+
+	
+	<style type="text/css">
+		@import url(test.css);
+	</style>
+	</head>
+	<body>
+		<div id="navbar"></div>
+		<form id="login">
+        		<input type="text" name="username">
+            		<input type="submit" value="login">
+       		</form>
+		<div id="username"></div><button id="logout">logout</button>
+		<form id="searchform">
+			<select name="type">
+				<option value="author">author</option>
+				<option value="following">following</option>
+				<option value="recent">recent</option>
+				<option value="related">related</option>
+				<option value="fulltext">fulltext</option>
+				<option value="affinity">affinity</option>
+  			</select>
+			<br/>
+			<select name="number">
+				<option value="5">5</option>
+				<option value="10">10</option>
+				<option value="20">20</option>
+				<option value="30">30</option>
+				<option value="40">40</option>
+				<option value="50">50</option>
+  			</select>
+			<br/>
+			<input type="text" name="textarea">
+			<input type="submit" value="search">
+		</form>
+		<br/>
+		<button id="getservers">get servers</button>
+	</body>
+</html>

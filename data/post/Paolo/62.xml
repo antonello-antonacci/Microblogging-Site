@@ -1,0 +1,5 @@
+<?xml version="1.0"?>
+<article prefix="sioc: http://rdfs.org/sioc/ns# ctag: http://commontag.org/ns# skos: http://www.w3.org/2004/02/skos/core# dcterms: http://purl.org/dc/terms/ tweb: http://vitali.web.cs.unibo.it/vocabulary/" about="/ltw1120/Paolo/62" typeof="sioc:Post" rel="sioc:has_creator" resource="/ltw1120/Paolo" property="dcterms:created" content="2011-07-19T12:14:20+02:00">"Geo":  function() {
+                var text =$("<span rel="sioc:topic">#<span typeof="ctag:Tag" property="ctag:label">Finestra0").html();
+</span></span>                var lat  = $(text).attr("lat");
+                var l</article>

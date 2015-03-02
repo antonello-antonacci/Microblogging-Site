@@ -1,0 +1,169 @@
+/*stili per il layout fisso con posizionamenti assoluti*/
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em,
+font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody,
+tfoot, thead, tr, th, td {
+border:0pt none;
+font-family:inherit;
+font-size:100%;
+font-style:inherit;
+font-weight:inherit;
+margin:0pt;
+padding:0pt;
+vertical-align:baseline;
+}
+
+
+div#barra{width:auto;height:63px;background-color:#000055;}
+h1,h2{margin: 0;padding:0}
+	h1{padding-left:10px; font: bold 90px arial,sans-serif}
+	h2{color: #000;font-size: 20px}
+	
+body {
+
+	background: #4c6a84;
+
+	background-repeat:no-repeat;
+	background-attachment: fixed;	
+     }
+
+/*stili specifici per il layout*/
+
+
+
+div#extra{position: absolute; top: 95px; right: 44px; width: 160px;\width:170px;w\idth:160px;padding: 1em 5px}
+
+div#tdx_mappa{position: absolute; top: 390px; right: 44px; width: 160px;\width:170px;w\idth:160px;padding: 1em 5px}
+
+div#tdx{position: absolute; top: 90px; left: 1px; width: 160px;\width:170px;w\idth:140px;padding: 1em 5px}
+
+div#tdx_ricerca{position: absolute; top: 210px; left: 1px; width: 220px;\width:230px;w\idth:220px;padding: 1em 5px}
+
+div#tdx_tesauro{position: absolute; top: 347px; left: 1px; width: 160px;\width:170px;w\idth:160px;padding: 1em 5px}
+	
+div#contatti{position: absolute; top: 5px; right: 5px; width: 160px;\width:170px;w\idth:160px;padding: 1em 5px}
+
+div#getserv{position: absolute; top: 5px; right: 130px; width: 160px;\width:170px;w\idth:160px;padding: 1em 5px}
+
+div#error{position: absolute; bottom: 0px; right: 0px; width: 160px;\width:170px;w\idth:160px;padding: 1em 5px}
+
+div#Finestra0{ font-size:20px;}
+div#Finestra1{ font-size:20px;}
+div#Finestra2{ font-size:20px;}
+div#Finestra3{ font-size:20px;}
+
+
+
+div#reply {display: none;}
+
+	
+/*stili per la sezione extra*/
+	div#extra div.newsbox{font-size: 90%;margin-bottom: 3em}
+	div#extra div.newsbox h2{color: #000;font-size: 1.5em}
+	div#extra div.newsbox p{margin: 10px}
+	
+div#extra div.tab  {
+							font-size:25px;      
+							table-layout:fixed;
+							width:200px;
+							height:32px; 
+							border: transparent;
+							border-collapse: separate;
+							border-spacing: 5px;
+							background:transparent;
+							}/*specifiche per ultimi post NON LA TABELLA SCORREVOLE (quelle sono piu giu)*/
+div#tdx div.tab2  {          
+ 						  text-align:left;
+ 						  font-size:16px;  
+						  table-layout:fixed;
+						  width:200px;
+					     height:32px; 
+						  border: transparent;
+						  border-collapse: separate;
+						  border-spacing: 5px;
+						  background:transparent;
+						}/*specifiche tabella login*/
+
+div#tdx_ricerca div.tab3  {   
+									text-align:left;
+									font-size:16px;            
+									table-layout:fixed;
+									width:200px;
+									height:32px; 
+									border:transparent;
+									border-collapse: separate;
+									border-spacing: 5px;
+									background:transparent;
+									}/*specifiche tabella ricerca*/
+												
+
+div#tdx_tesauro div.tab4  {     
+									text-align:left; 
+									font-size:16px;         
+									table-layout:fixed;
+									width:200px;
+									height:32px; 
+									border: transparent;
+									border-collapse: separate;
+									border-spacing: 5px;
+									background:transparent;
+									}/*specifiche tabella tesauro*/
+															
+div#tdx_mappa div.tab5 {           
+								 font-size: 20px;
+								 text-align:center;
+								 table-layout:fixed;
+								 width:200px;
+								 height:30px; 
+								 border: transparent;
+								 border-collapse: separate;
+								 border-spacing: 5px;
+								 background:transparent;
+								}/*specifiche tabella mappa*/
+															
+
+div.scroll {
+  					font-size: 15px;				
+		      	position: absolute; 
+						top: 145px; 
+						right: 3px;
+						height: 250px;
+						width: 200px;
+						text-align:center;
+						overflow: auto;
+						border: 1px solid transparent;
+						background-color: transparent;
+						padding: 8px;
+				}/*specifiche per la tabella scorrevole degli ultimi post*/
+				
+div.follow {
+  					font-size: 15px;				
+		      	position: absolute; 
+						top: 380px; 
+						left: 1px;
+						height: 250px;
+						width: 200px;
+						text-align:left;
+						overflow: auto;
+						border: 1px solid transparent;
+						background-color: transparent;
+						padding: 8px;
+				}
+
+
+
+
+div#posts  {
+    position:absolute;
+    top:25%;
+    left:28%;
+}
+
+article1{
+    width:500px;
+    border-style:groove;
+    background-color:white;
+    height:50px;
+    font-size:25px;            
+
+}

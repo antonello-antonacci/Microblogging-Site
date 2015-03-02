@@ -1,0 +1,90 @@
+  										
+textarea { resize:none; } /* none|horizontal|vertical|both */
+textarea.vert { resize:vertical; }
+textarea.noResize { resize:none; }
+
+
+
+div.tab-barra {
+ 						font-size:150% ;
+ 						position:relative ;	
+ 						top: 0;
+ 						left: 0;
+ 						width: auto;
+ 						overflow: auto;
+ 						height: 60px;
+  						background: #000055 url(images/ui-bg_inset-soft_75_000055_1x100.png) 50% 50% repeat-x; color: #ffffff; font-weight: bold;
+  						margin-top: -11px;
+  						margin-left: -11px;
+  						margin-bottom: -10px;
+  						margin-right: -10px;
+ 					}
+
+
+div.scroll {
+		overflow: scroll;
+		
+		
+	 
+	
+	}
+ 				
+div#tab-dialog {
+						width: 280px;
+						height: 0px;
+			  			position: relative;
+			  			top: 25%;
+			  			left: 72%;
+		}
+		
+div#tdx {
+				width: 250px;
+				height: 0px;
+				position: relative;
+				top: 20%;
+				left: 42%;
+				
+			}
+
+				
+img#logo{
+    margin-top:8px;
+}
+
+div#lsu,div#l,div#lt, div#lsup {
+    background-color:white;
+    position: absolute;
+    top:45%;
+    width:75%;
+    height:70%;
+}
+
+
+
+div#timeline-separator{
+    width:130px;
+    height:3px;
+    background-color:#000066;
+}
+
+a#thes-word{
+    color:blue;
+}
+
+a#replyTo{
+    color:blue;
+}
+
+audio{
+    width:90%;
+}
+
+
+p#post{
+    overflow:scroll;
+}
+
+/* per il fatto della mappa dobbiamo sistemare il padding dichiarato anche in jq custom.css*/
+div.mappa {padding: 5px 5px;}
+
+

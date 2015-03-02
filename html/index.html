@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=8">
+
+    <title>SPAM</title>
+     
+    <link type="text/css" href="css/jquery-ui-1.8.14.custom.css" rel="stylesheet" />
+
+	 <script type="text/javascript" src="scripts/jquery/jquery.js"></script>
+    <script type="text/javascript" src="scripts/jquery/jquery.form.js"></script> 
+    <script type="text/javascript" src="scripts/jquery/jquery.layout.js"></script>
+    <script type="text/javascript" src="scripts/jquery/jquery.cookie.js"></script>
+    <script type="text/javascript" src="scripts/jquery/jquery.charcounter.js"></script>
+    <script type="text/javascript" src="scripts/jquery/jquery-ui-1.8.14.custom.min.js"></script>
+    <script type="text/javascript" src="scripts/jquery/jquery.layout-latest.js"></script>
+    <script type="text/javascript" src="scripts/jquery/jquery.activity-indicator-1.0.0.js"></script>
+    <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
+    <script type="text/javascript" src="http://code.google.com/apis/gears/gears_init.js"></script>
+    
+    <script type="text/javascript" src="scripts/Desktop/pam/login.js"></script>
+    <script type="text/javascript" src="scripts/Desktop/timer.js"></script>
+    <script type="text/javascript" src="scripts/Desktop/pam/servers.js"></script>
+    <script type="text/javascript" src="scripts/Desktop/pam/setfollow.js"></script>
+    <script type="text/javascript" src="scripts/Desktop/pam/post.js"></script>
+    <script type="text/javascript" src="scripts/Desktop/pam/thesaurus.js"></script>
+    <script type="text/javascript" src="scripts/Desktop/pam/search.js"></script>
+    <script type="text/javascript" src="scripts/Desktop/pam/setlike.js"></script>
+    <script type="text/javascript" src="scripts/Desktop/timeline.js"></script>
+    <script type="text/javascript" src="scripts/Desktop/pam/replyto.js"></script>
+    <script type="text/javascript" src="scripts/mobile.js"></script>
+    <script type="text/javascript" src="scripts/Desktop/rdf.js"></script>
+
+     <script type="text/javascript" src="scripts/Desktop/geo.js"></script>
+     <script type="text/javascript" src="scripts/Desktop/function.js"></script>
+     <script type="text/javascript" src="scripts/Desktop/layout.js" ></script>
+
+    <style type="text/css"> 
+        @import url("css/styleQuery.css");
+    </style>	
+		
+    <style type="text/css">
+        @import url("css/stile.css");
+    </style>
+    
+</head>
+<body>
+
+
+<div class="ui-layout-center">
+    
+    <div id="opaqueView"></div>
+    
+        <div id="dialog-modal" title="Rispondi al Post"></div>
+
+        <div id="Finestra0"></div>	
+
+        <div id="Finestra1"></div>
+            
+        <div id="Finestra2"></div>
+            
+        <div id="Finestra3"></div>
+
+        <div id="Finestra4"></div>
+
+        <div id="Finestra5"></div>	
+
+        <div id="Finestra6"></div>
+            
+        <div id="Finestra7"></div>
+            
+</div>
+
+
+
+<div class="ui-layout-north">
+
+
+<!-- Login -->
+<div class="tab-barra">
+<div id="tdx">
+            <input id="loginText" type="text" name="username" style="width: 135px;"
+            onclick="if (this.value=='Username') this.value=''; "
+            onblur=" if(this.value=='') ;">
+                <input id="login" type="submit" value="login">
+    
+<div id="username"></div><button id="logout">logout</button>
+        
+</div>
+
+<div id="tab-dialog">
+    
+<input type="checkbox" onChange="setDestinationServer(this.checked)">TerSoft Server 
+    
+<button id="home-button" onclick="startTimer()">Refresh</button>
+
+<button id="dialog"> Info </button>
+        
+</div>
+
+    <img id="logo" src="css/images/logo2.png" alt="Spam" title="Spam">
+
+
+</div>
+</div>
+
+
+
+<div class="ui-layout-east">
+	<div class="ui-layout-content">
+		<div id="accordion">
+			<div>
+				<h3><a href="#" style="font-size:medium;">Timeline</a></h3>
+                 <div id="lastPost">
+                     <div id="lastPostContent"></div>
+                 </div>
+				
+			</div>
+			<div>
+				<h3><a href="#" style="font-size:medium">Tesauro</a></h3>
+				<div id="thesauro-content">
+                </div>
+			</div>
+			<div>   
+				<h3><a href="#" style="font-size:medium;">Mappa</a></h3>
+				<div> 
+				<article><p><span id="status"></span></p></article>
+    			</div>
+			</div>
+		</div>
+    </div>
+</div>
+
+<div class="ui-layout-west">
+	<div class="ui-layout-content">
+		<div id="accordion1">
+			<div>
+				<h3><a href="#" style="font-size:medium;">Ricerca</a></h3>
+                <div id="search" >
+                    <p>
+                        <select id="searchType" name="type">
+                            <option value="author">author</option>
+                            <option value="following">following</option>
+                            <option value="recent">recent</option>
+                            <option value="related">related</option>
+                            <option value="fulltext">fulltext</option>
+                            <option value="affinity">affinity</option>
+                        </select>
+                    </p>
+
+                    <p>
+                        <select id="selectLimit" name="limit">
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                        </select>
+                    </p>
+                    <div id="lsu">
+                        <p><select id="searchserverlistLsu"></select></p>
+                        
+                        <input type="text" id="paramUserIdLsu" style="width: 110px;" name="param" placeholder="UserID"  onclick="if (this.value=='UserID') this.value=''; "
+                            onblur=" if(this.value=='') this.value='UserID';">
+                            <p>
+                            <input type="submit" value="search" onclick="search()" id="searchbutton"/>
+                            </p>
+                    </div>
+                    <div id="l">
+                        <p>
+                        <input type="submit" value="search" onclick="search()" id="searchbutton"/>
+                        </p>
+                    </div>
+                    <div id="lt">
+                        <input type="text" id="paramTermLt" style="width: 110px;" name="param" placeholder="Termine"  onclick="if (this.value=='Termine') this.value=''; "
+                            onblur=" if(this.value=='') this.value='Termine';">
+                            <p>
+                            <input type="submit" value="search" onclick="search()" id="searchbutton"/>
+                            </p>
+                    </div>
+                    <div id="lsup">
+                        <p><select id="searchserverlistLsup"></select></p>
+                        
+                        <input type="text" id="paramUserLsup" style="width: 110px;" name="param" placeholder="UserID"  onclick="if (this.value=='UserID') this.value=''; "
+                            onblur=" if(this.value=='') this.value='UserID';">
+
+                        <input type="text" id="paramPostLsup" style="width: 110px;" name="param" placeholder="PostID"  onclick="if (this.value=='PostID') this.value=''; "
+                            onblur=" if(this.value=='') this.value='PostID';">
+                            <p>
+                            <input type="submit" value="search" onclick="search()" id="searchbutton"/>
+                            </p>
+                    </div>
+                </div>
+			</div>
+			<div>
+				<h3><a href="#" style="font-size:medium;">Set Follow</a></h3>
+				<div> 
+					<form id="setfollow">
+  		          <input type="text" id="user" style="width: 110px;" name="user" placeholder="User" 
+      	       onclick="if (this.value=='User') this.value=''; "
+          	    onblur=" if(this.value=='') this.value='User';">
+                      <p><select id="followserverlist"></select></p>
+
+            	 <input type="submit" value="set follow">
+        		   </form> 				
+				</div>
+			</div>
+			<div>
+				<h3><a href="#" style="font-size:medium;">Set Unfollow</a></h3>
+				<div>
+					   <form id="setunfollow">
+            			<input type="text" id="user" style="width: 110px;" name="user" placeholder="User" 
+            			onclick="if (this.value=='User') this.value=''; "
+           			 	onblur=" if(this.value=='') this.value='User';">
+                            <p><select id="unfollowserverlist"></select></p>
+
+            			<input type="submit" value="set unfollow">
+        				</form> 				
+				</div>
+			</div>
+					<div>
+				<h3><a href="#" style="font-size:medium;">Server</a></h3>
+				<div>
+                    <form id="setservers">
+                        <p>
+                        <input type="text" id="listaserver" style="width: 110px;" name="server" placeholder="indirizzo" 
+                            onclick="if (this.value=='ServerID') this.value=''; "
+                            onblur=" if(this.value=='') this.value='ServerID';">
+                        </p>
+                        <input type="submit" value="add Server" />    
+                            </form> 
+				</div>
+			</div>
+		</div>
+</div>
+
+</div>
+
+		<!-- ui-dialog -->
+		<div id="finestraContatti" style="font-size:medium;text-align:center;" title="Contatti">
+			<p>Benvenuto in Twenty! <br> 
+
+Per iniziare ad utilizzare tutti i nostri servizi effettua il login con il tuo nome utente. Non &egrave; richiesta alcuna password.
+
+Una volta effettuato il login, inizia ad esplorare il nostro microblog. <br>
+
+Sulla sinistra dello schermo trovate: <br> 
+
+La Ricerca dove &egrave; possibile effettuare una ricerca (author, following, recent,related, fulltext e affinity), impostando il limite dei post da trovare e quando &egrave; richiesto impostare anche il server;<br> 
+
+Set follow/unfollow per aggiungere o rimuovere un utente dalla tua lista di amici; <br>
+
+Infine abbiamo la possibili&agrave; di aggiungere un server alla nostra lista dei server federati; <br>
+
+Sulla destra dello schermo trovate: <br>
+
+La Timeline che raccoglie gli ultimi 10 post da te pubblicati;<br>
+
+Il Tesauro che &egrave; un insieme di tag cliccabili. Selezionando un tag parte una ricerca dei post relativi a quella parola; <br>
+
+La Mappa che indica la tua posizione. <br>
+
+In alto alla sinistra del pulsante che avete appena cliccato trovate la refresh per i post e una checkbox per seleziona il server Tersoft<br>
+
+I risultati di qualsiasi ricerca effettuata appariranno nelle finestre centrali dove troverai oltre al post e il suo autore i seguenti pulsanti: <br>
+
+	<img src="css/glyphish-icons/icons/focus.png" alt="focus"> serve per portare al centro quel post e caricare i suoi post affini;<br>
+	<img src="css/glyphish-icons/icons/like.png" alt="like"> mi piace;<br>
+	<img src="css/glyphish-icons/icons/dislike.png" alt="dislike"> non mi piace;<br>
+	<img src="css/glyphish-icons/icons/reply.png" alt="reply"> rispondere al post;<br>
+	<img src="css/glyphish-icons/icons/respam.png" alt="respam"> respammare il post.<br>
+   
+
+Per informazini contattare i seguenti esperti:
+
+	 scarlino@cs.unibo.it
+	 ladisa@cs.unibo.it 
+	 antonacc@cs.unibo.it 
+
+Per donazioni di qualsiasi somma (basta il pensiero) per il mantenimento del progetto ( noi rifiutiamo le pubblicit&agrave;) versare sul seguete conto 
+<br>
+
+C/C 1234567893245761289ah <br>
+intestato a: Twenty spa association
+</p>
+		</div>
+		
+		
+			
+		<!-- ui-dialog -->
+		<div id="finestrainvio" title="Cosa c'&egrave; di nuovo?">
+			<textarea id="articolo"  class="myTextAreainvio" cols="42" rows="3" ></textarea>
+				
+		</div>
+				
+</body>
+</html>
